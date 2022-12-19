@@ -1,10 +1,22 @@
-import { useState } from "react"
-import { getMovieData } from "../../services/db"
+import { useState } from 'react'
+import './movie.css'
 
-function Movie(...props){
-    return(
+function Movie(props) {
+let [list,setList]=useState('')
+function addList(){
+setList([`${props.title} (${props.year})`])
+console.log(list);
+
+}
+    return (
         <>
-            <h1>{props.title}</h1>
+            <div className="showPoster">
+                <img src={props.poster} alt='omg' height='150px'></img>
+                <div className="infoMovie">
+                    <h1>{props.title} ({props.year})</h1>
+                    <button type='button' onClick={addList} className='showBtn'>ADD</button>
+                </div>
+            </div>
         </>
     )
 }

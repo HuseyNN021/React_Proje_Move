@@ -1,10 +1,13 @@
 import './List.css'
-function List(){
+function List(props) {
     console.log();
-    return(
+    return (
         <>
             <div className='list'>
                 <input type='text' name='list' ></input>
+                <div className='deleteBtn'>
+                    <p>{props.titleList}</p>
+                </div>
                 <button>Kaydet</button>
             </div>
         </>

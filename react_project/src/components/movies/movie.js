@@ -3,10 +3,9 @@ import List from '../list/List';
 import './movie.css'
 
 function Movie(props) {
-    let [list, setList] = useState('')
     function addList() {
-        setList(`${props.title} (${props.year})`)
-        console.log(list);
+        props.titleSet(`${props.title} (${props.year})`)
+        console.log(props.titleList);
     }
 
     return (

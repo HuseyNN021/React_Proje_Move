@@ -2,9 +2,12 @@
     display: flex;
     margin: 10px;
     padding: 10px;
-    width: 60%;
     background-color: #ffeedb;
-
+    width: 500px;
+}
+.showPoster>img{
+    border-radius: 5px;
+    object-fit: cover;
 }
 .infoMovie{
     margin: 0px 10px;
@@ -19,7 +22,4 @@
 .infoMovie>h1{
     font-weight: 500;
     font-size: 21px;
-}
-.none{
-    display: none;
 }

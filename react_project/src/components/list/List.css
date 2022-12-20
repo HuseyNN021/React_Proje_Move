@@ -4,6 +4,8 @@
     flex-direction: column;
     padding: 20px;
     margin: 20px;
+    width: min-content;
+    height: min-content;
 }
 .list> input{
     margin-bottom: 10px;

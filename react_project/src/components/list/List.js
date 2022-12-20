@@ -1,5 +1,6 @@
 import './List.css'
 function List(){
+    console.log();
     return(
         <>
             <div className='list'>

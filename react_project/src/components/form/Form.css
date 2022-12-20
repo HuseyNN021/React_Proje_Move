@@ -3,6 +3,7 @@ form{
     border: 1px solid black;
     padding: 10px;
     max-width: max-content;
+
 }
 input{
     margin-right: 10px;
@@ -11,3 +12,7 @@ input{
 .poster{
     margin: 0px 10px;
 }
+/* .form{
+    display: flex;
+    flex-direction: column;
+} */

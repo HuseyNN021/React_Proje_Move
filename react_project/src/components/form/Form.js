@@ -1,15 +1,21 @@
 import { useState } from 'react';
 import { getMovieData } from '../../services/db';
+import List from '../list/List';
 import Movie from '../movies/movie';
 import './Form.css'
 function Form() {
     const [data, setData] = useState([]);
+    // let [listShow,setListShow]=useState('')
     const handleSubmit = async (e) => {
         e.preventDefault();
-        const result = await getMovieData(e.target.move.value)
-        setData(result);
+        if(e.target.move.value){
+            const result = await getMovieData(e.target.move.value)
+            setData(result);    
+        }
         console.log(data);
+        // setListShow(result);
     }
+ 
     return (
         <>
             <div className='form'>
@@ -23,9 +29,9 @@ function Form() {
                         data?.map(item => {
                             return (
                                 <>
-                                    <Movie title={item.Title} poster={item.Poster} year={item.Year} imdb={item.imdbID} type={item.Type}/>
+                                    <Movie title={item.Title} poster={item.Poster} year={item.Year} imdb={item.imdbID} type={item.Type} />
                                 </>
-                               
+
                             )
                         }
                         )

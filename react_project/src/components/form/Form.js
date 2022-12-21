@@ -3,9 +3,8 @@ import { getMovieData } from '../../services/db';
 import List from '../list/List';
 import Movie from '../movies/movie';
 import './Form.css'
-function Form() {
+function Form({list,setList}) {
     const [data, setData] = useState([]);
-    let [listShow, setListShow] = useState([])
     const handleSubmit = async (e) => {
         e.preventDefault();
         if (e.target.move.value) {
@@ -18,16 +17,11 @@ function Form() {
         <>
             <div className='form'>
                 <div className='main'>
-                    <div className='formM'>
                     <form onSubmit={handleSubmit}>
                         <p>Искать фильм по названию:</p>
                         <input type='text' placeholder='Spiderman,Shawshank,Redemtion' name='move'></input>
                         <button type='submit'>Click</button>
                     </form>
-                    </div>
-                    <div className='showList2'>
-                        <List titleList={listShow}/>
-                    </div>
                 </div>
 
                 <div>
@@ -35,7 +29,7 @@ function Form() {
                         data?.map(item => {
                             return (
                                 <>
-                                    <Movie titleList={listShow}  titleSet={setListShow} title={item.Title} poster={item.Poster} year={item.Year} imdb={item.imdbID} type={item.Type} />
+                                    <Movie movieData={data} id={item.imdbID} setList={setList} list={list}/>
                                 </>
 
                             )
@@ -49,3 +43,5 @@ function Form() {
     )
 }
 export default Form;
+
+// title={item.Title} poster={item.Poster} year={item.Year} imdb={item.imdbID} type={item.Type} 

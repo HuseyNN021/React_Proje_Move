@@ -10,3 +10,13 @@
 .list> input{
     margin-bottom: 10px;
 }
+.delBtn{
+    display: flex;
+    align-items: center;
+}
+.delete{
+    margin: 0px 10px;
+}
+.delBtn>p{
+    width: 120px;
+}

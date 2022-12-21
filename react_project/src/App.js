@@ -6,12 +6,13 @@ import List from './components/list/List';
 import { getMovieData } from './services/db';
 
 function App() {
-
+const [list,setList]=useState([])
   return (
     <>
       <Header />
       <div className='row'>
-        <Form />
+        <Form  list={list} setList={setList}/>
+        <List list={list} setList={setList}/>
       </div>
     </>
   );

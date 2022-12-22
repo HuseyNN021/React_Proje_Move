@@ -17,6 +17,7 @@ function List({ list,setList }) {
             setValue(listInput.current.value)
             
         }
+        console.log(listInput.current.value);
     }
 
     return (
@@ -41,7 +42,7 @@ function List({ list,setList }) {
                 </ul>
 
                {
-                value.length>0?<Link >go to list</Link>:<button onClick={goToList}>Kaydet</button>
+                value.length>0?<Link to={'/link'}>go to list</Link>:<button onClick={goToList}>Kaydet</button>
                 }
             </div>
         </>
@@ -49,28 +50,3 @@ function List({ list,setList }) {
 }
 export default List
 
-/* <div className='deleteBtn'>
-        {
-          props.titleList.map((item)=>{
-              return(
-                item.title != "" ? <div className='delete'>
-                  <p>{item.title} ({item.year})</p>
-                  <button onClick={removeBtn}>X</button>
-                </div> : null
-              )
-          })
-        }
-      </div> */
-
-
-
-/* {
-    list.map(item=>{
-        return(
-            <p>
-                {item.Title}
-            </p>
-        )
-    })
-    
-} */

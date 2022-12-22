@@ -7,7 +7,7 @@ function Movie({ movieData, setList, list, id }) {
     function addList(title) {
         const result=list.includes(title)
         if(!result){
-                    setList([...list, title])
+            setList([...list, title])
 
         }
     }
